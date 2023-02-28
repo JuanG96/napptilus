@@ -26,12 +26,15 @@ const ItemAttribute = styled.p`
 `;
 
 const ItemsDiv = styled.div`
-    width: 50%;
+    width: 75%;
     display:flex;
     flex-wrap: wrap;
     &>* {
         margin-bottom: 10px;
         flex: 1 1 50%;
+    }
+    @media screen and (max-width: 576px) {
+        width: 50%;
     }
 `;
 

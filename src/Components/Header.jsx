@@ -22,7 +22,7 @@ const Header = () => {
                 <MainDiv>
                     <LogoImg src={logo} alt="" onClick={() => navigate('/')} />
                     <div>
-                        <HiOutlineShoppingCart size={42}></HiOutlineShoppingCart>
+                        <HiOutlineShoppingCart size={42} color={'white'}></HiOutlineShoppingCart>
                         {count !== 0 || +localStorage.cart !== 0 ? <ProductCount>{count === 0 ? localStorage.cart : count}</ProductCount> : <></>}
                     </div>
                 </MainDiv>
@@ -30,7 +30,7 @@ const Header = () => {
                     itemId
                         ?
                         <BreadcrumbDiv>
-                            <Link to="/">Principal</Link>
+                            <NewLink to="/">Principal</NewLink>
                             <BreadcrumbP>{'>'}</BreadcrumbP>
                             <BreadcrumbP>{item.model}</BreadcrumbP>
                         </BreadcrumbDiv>
@@ -43,8 +43,8 @@ const Header = () => {
 }
 
 const GeneralDiv = styled.div`
-    background-color: #808080;
-    box-shadow: 0 2px 10px black;
+    background-color: #5581F3;
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
 `;
 
 const MainDiv = styled.div`
@@ -54,19 +54,24 @@ const MainDiv = styled.div`
 `;
 
 const LogoImg = styled.img`
-    width: 6%;
+    width: 4%;
 `;
 
 const BreadcrumbDiv = styled.div`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    background-color: #8E8E8E;
-    border-top: 1px solid #858585;
+    background-color: #5581F3;
     padding-left: 10px;
+    color: white;
 `;
+
 const BreadcrumbP = styled.p`
     margin: 4px;
+`;
+
+const NewLink = styled(Link)`
+    color: white;
 `;
 
 const ProductCount = styled.span`

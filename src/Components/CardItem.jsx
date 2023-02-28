@@ -28,9 +28,10 @@ const InternalDiv = styled.div`
     width:100%;
     margin: 20px;
     padding-top: 10px;
-    background-color: #F2F2F2;
+    background-color: #FFFFFF;
     border-radius: 10px;
-    box-shadow: 1px 2px 6px black;
+    // box-shadow: 1px 2px 6px black;
+    box-shadow: 0 0 6px rgba(0,0,0,.15);
 `;
 
 const Image = styled.img`

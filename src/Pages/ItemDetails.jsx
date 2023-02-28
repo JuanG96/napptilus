@@ -22,13 +22,15 @@ const ItemDetails = () => {
                 {
                     item ?
                         <>
-                            <div>
-                                <img src={item.imgUrl} alt="" />
-                            </div>
-                            <RightDiv>
-                                <ItemDescription item={item} />
-                                <ItemActions item={item}></ItemActions>
-                            </RightDiv>
+                            <DetailsDiv>
+                                <div>
+                                    <img src={item.imgUrl} alt="" />
+                                </div>
+                                <RightDiv>
+                                    <ItemDescription item={item} />
+                                    <ItemActions item={item}></ItemActions>
+                                </RightDiv>
+                            </DetailsDiv>
                         </>
                         : <></>
                 }
@@ -39,7 +41,7 @@ const ItemDetails = () => {
 
 const MainDiv = styled.div`
     min-height: 100vh;
-    background-color: #ACACAC;
+    background-color: #F7F9FA;
     padding-bottom: 30px;
 `;
 
@@ -47,11 +49,12 @@ const ItemDiv = styled.div`
     width: 75%;
     margin: auto;
     margin-top: 20px;
-    background-color: #EEEEEE;
+    background-color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 10px grey;
+    // box-shadow: 0 2px 10px grey;
+    box-shadow: 0 0 6px rgba(0,0,0,.15);
     border-radius: 10px;
 `;
 
@@ -61,6 +64,19 @@ const RightDiv = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    @media screen and (max-width: 576px) {
+        width: 100%;
+    }
+`;
+
+const DetailsDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 576px) {
+        flex-direction: column;
+    }
 `;
 
 export default ItemDetails

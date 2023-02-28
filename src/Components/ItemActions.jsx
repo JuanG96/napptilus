@@ -75,12 +75,16 @@ const ItemActions = ({ item }) => {
 }
 
 const ActionDiv = styled.div`
-    width: 50%;
+    width: 75%;
     display:flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     &>* {
         margin-bottom: 10px;
         flex: 1 1 50%;
+    }
+    @media screen and (max-width: 576px) {
+        width: 100%;
     }
 `;
 
@@ -112,9 +116,12 @@ const AttributesTitle = styled.h2`
 `;
 
 const AddButton = styled.button`
-    background-color: #343434;
+    background-color: #4C6089;
     color: white;
     height: 30px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
 `;
 
 export default ItemActions

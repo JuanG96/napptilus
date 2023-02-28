@@ -18,11 +18,11 @@ function Main() {
     if ((((Math.abs(new Date(localStorage.loadTime) - new Date())) / 1000) / 60) / 60 >= 1) {
       axios.get('https://itx-frontend-test.onrender.com/api/product')
         .then((res) => {
-          localStorage.loadTime = new Date()
           localStorage.items = JSON.stringify(res.data)
         })
       localStorage.cart = 0
       localStorage.cartItems = JSON.stringify([])
+      localStorage.loadTime = new Date()
     }
     setAllItems([...JSON.parse(localStorage.items)])
   }, [dispatch])
@@ -55,7 +55,7 @@ function Main() {
 
 const MainDiv = styled.div`
   height: 100%;
-  background-color: #ACACAC; 
+  background-color: #F7F9FA; 
 `;
 
 const SearchDiv = styled.div`
@@ -66,8 +66,10 @@ const SearchDiv = styled.div`
 
 const SearchInput = styled.input`
   border-radius: 5px;
-  height: 30px;
-  width: 15%;
+  height: 35px;
+  width: 20%;
+  box-shadow: 2px 2px 6px rgba(0,0,0,.2),inset 1px 1px 2px hsla(0,0%,100%,.3);
+  border: 1px solid rgba(0,0,0,.2);
   @media screen and (max-width: 1100px) {
     width: 25%;
   }
@@ -99,12 +101,13 @@ const ListDiv = styled.div`
 `;
 
 const LoadButton = styled.button`
-  background-color: #4F4F4F;
+  background-color: #4C6089;
   color: white;
   font-size: 24px;
   height: 50px;
   width: 20%;
   margin-bottom: 20px;
+  border: none;
 `;
 
 export default Main;
