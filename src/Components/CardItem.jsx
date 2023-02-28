@@ -10,8 +10,7 @@ const CardItem = ({ item }) => {
         <CardDiv>
             <InternalDiv onClick={() => clickedDiv({ id: item.id })}>
                 <Image src={item.imgUrl} alt="" />
-                <p>{item.brand}</p>
-                {item.model.length > 13 ? <p>{item.model.slice(0, 13)}...</p> : <p>{item.model}</p>}
+                <h3>{item.brand} {item.model.length > 13 ? `${item.model.slice(0, 13)}...` : item.model}</h3>
                 <p>{item.price === '' ? <strong>Sin precio</strong> : `${item.price}€`}</p>
             </InternalDiv>
         </CardDiv>

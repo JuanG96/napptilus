@@ -45,7 +45,7 @@ const MainDiv = styled.div`
 
 const ItemDiv = styled.div`
     width: 75%;
-    margin-left: 12.5%;
+    margin: auto;
     margin-top: 20px;
     background-color: #EEEEEE;
     display: flex;

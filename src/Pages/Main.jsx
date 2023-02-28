@@ -46,7 +46,7 @@ function Main() {
             })
           }
         </ListDiv>
-        {sliceState.to !== 100 ? <LoadButton onClick={() => setSliceState((prev) => ({ from: 0, to: prev.to + 20 }))}>Cargar más</LoadButton> : <></>}
+        {sliceState.to !== allItems.length ? <LoadButton onClick={() => setSliceState((prev) => ({ from: 0, to: prev.to + 20 }))}>Cargar más</LoadButton> : <></>}
       </div>
     </MainDiv>
   );
